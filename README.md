@@ -51,6 +51,12 @@ Start provisioning of the cluster using the following command:
 ansible-playbook site.yml -i inventory/my-cluster/hosts.ini
 ```
 
+To reset:
+ansible-playbook reset.yml -i inventory/my-cluster/hosts.ini
+
+To install hd:
+ansible-playbook external-hdd.yml -i inventory/my-cluster/hosts.ini
+
 ## Kubeconfig
 
 To get access to your **Kubernetes** cluster just
