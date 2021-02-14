@@ -16,15 +16,15 @@
     owner: "{{ ansible_user }}"
     recurse: yes
 
-- name: Create a ext4 filesystem on /dev/sda
+- name: Create a ext4 filesystem on /dev/{{ disk_mount }}
   filesystem:
     fstype: ext4
-    dev: /dev/sda
+    dev: "/dev/{{ disk_mount }}"
 
 - name: Mount
   mount:
     path: /mnt/ssd
-    src: /dev/sda
+    src: "/dev/{{ disk_mount }}"
     fstype: ext4
     state: mounted
 

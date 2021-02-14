@@ -1,2 +1,4 @@
 software_packages:
   - nfs-kernel-server
+#with lsblk
+disk_mount: sda
