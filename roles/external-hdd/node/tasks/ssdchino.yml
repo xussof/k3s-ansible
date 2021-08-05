@@ -1,0 +1,25 @@
+---
+- name: Installing packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ software_packages }}"
+
+- name: Create disk path
+  file:
+    path: /mnt/ssdchino
+    owner: "{{ ansible_user }}"
+    recurse: yes
+
+- name: Including line on exports
+  lineinfile:
+    path: /etc/fstab
+    line: '{{ master_ip }}:/mnt/ssdchino   /mnt/ssdchino   nfs    rw,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10  0  0'
+    insertafter: EOF
+  notify: reboot
+
+- name: Create disk path
+  file:
+    path: /mnt/ssdchino
+    owner: "{{ ansible_user }}"
+    recurse: yes

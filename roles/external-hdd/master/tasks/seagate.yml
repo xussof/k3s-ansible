@@ -1,0 +1,40 @@
+---
+- name: Installing packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ software_packages }}"
+
+- name: Create disk path
+  file:
+    path: /mnt/seagate
+    owner: "{{ ansible_user }}"
+    recurse: yes
+
+- name: Create a ext4 filesystem on /dev/{{ disk_mount_seagate }}
+  filesystem:
+    fstype: ext4
+    dev: "/dev/{{ disk_mount_seagate }}"
+
+- name: Mount
+  mount:
+    path: /mnt/seagate
+    src: "/dev/{{ disk_mount_seagate }}"
+    fstype: ext4
+    state: mounted
+
+- name: Including line on exports
+  lineinfile:
+    path: /etc/exports
+    #regexp: '^/mnt/seagate *(rw,no_root_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)'
+    #line: '/mnt/seagate *(rw,no_root_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)'
+    regexp: '^/mnt/seagate *(rw,no_root_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)'
+    line: '/mnt/seagate *(rw,no_root_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)'
+    insertafter: EOF
+  notify: restart_nfs
+
+- name: Create disk path
+  file:
+    path: /mnt/seagate
+    owner: "{{ ansible_user }}"
+    recurse: yes

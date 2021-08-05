@@ -4,27 +4,11 @@
     name: "{{ new_hostname }}"
   notify: reboot
 
-- name: Installing packages
-  package:
-    name: "{{ item }}"
-    state: present
-  with_items: "{{ software_packages }}"
+- name: Include ssd
+  include_tasks: ssd.yml
 
-- name: Create disk path
-  file:
-    path: /mnt/ssd
-    owner: "{{ ansible_user }}"
-    recurse: yes
+- name: Include ssdchino
+  include_tasks: ssdchino.yml
 
-- name: Including line on exports
-  lineinfile:
-    path: /etc/fstab
-    line: '{{ master_ip }}:/mnt/ssd   /mnt/ssd   nfs    rw,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10  0  0'
-    insertafter: EOF
-  notify: reboot
-
-- name: Create disk path
-  file:
-    path: /mnt/ssd
-    owner: "{{ ansible_user }}"
-    recurse: yes
+- name: Include seagate
+  include_tasks: seagate.yml
