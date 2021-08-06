@@ -19,7 +19,8 @@
 - name: Mount
   mount:
     path: /mnt/ssd
-    src: "/dev/{{ disk_mount }}"
+    #src: "/dev/{{ disk_mount }}"
+    src: UUID=1d4b20cf-59a3-46ee-afe8-399922ea3264
     fstype: ext4
     state: mounted
 

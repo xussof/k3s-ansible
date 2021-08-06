@@ -19,7 +19,8 @@
 - name: Mount
   mount:
     path: /mnt/seagate
-    src: "/dev/{{ disk_mount_seagate }}"
+    #src: "/dev/{{ disk_mount_seagate }}"
+    src: UUID=132193a8-f6ae-4e3a-8fb0-98c8a4827871
     fstype: ext4
     state: mounted
 

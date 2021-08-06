@@ -19,7 +19,8 @@
 - name: Mount
   mount:
     path: /mnt/ssdchino
-    src: "/dev/{{ disk_mount_ssd_chino }}"
+    #src: "/dev/{{ disk_mount_ssd_chino }}"
+    src: UUID=bc3ad14c-e047-4de5-9838-5b249e7600dd
     fstype: ext4
     state: mounted
 
