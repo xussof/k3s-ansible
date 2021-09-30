@@ -1,6 +1,6 @@
 software_packages:
   - nfs-kernel-server
 #with lsblk
-disk_mount: sdb
-disk_mount_ssd_chino: sda
-disk_mount_seagate: sdc
+disk_mount: sda
+#disk_mount_ssd_chino: sda
+disk_mount_seagate: sdb

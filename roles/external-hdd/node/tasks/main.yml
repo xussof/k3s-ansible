@@ -7,8 +7,8 @@
 - name: Include ssd
   include_tasks: ssd.yml
 
-- name: Include ssdchino
-  include_tasks: ssdchino.yml
+#- name: Include ssdchino
+#  include_tasks: ssdchino.yml
 
 - name: Include seagate
   include_tasks: seagate.yml
