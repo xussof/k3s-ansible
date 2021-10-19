@@ -4,8 +4,8 @@
     name: "{{ new_hostname }}"
   notify: reboot
 
-- name: Include ssd
-  include_tasks: ssd.yml
+#- name: Include ssd
+#  include_tasks: ssd.yml
 
 #- name: Include ssdchino
 #  include_tasks: ssdchino.yml

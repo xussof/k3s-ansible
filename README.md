@@ -64,3 +64,6 @@ To get access to your **Kubernetes** cluster just
 ```bash
 scp debian@master_ip:~/.kube/config ~/.kube/config
 ```
+
+To set up garbage collection for k3s:
+https://www.cloudsavvyit.com/11041/how-to-clean-up-old-containers-and-images-in-your-kubernetes-cluster/
