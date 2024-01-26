@@ -1,10 +1,6 @@
 ---
-<<<<<<< HEAD
 k3s_version: v1.28.2+k3s1
 # k3s_version: v1.28.1+k3s1
-=======
-k3s_version: v1.26.1+k3s1
->>>>>>> d8287052c4fa3c9a64b73b4a7c8b1a33964ead3a
 ansible_user: pi
 #ansible_user: xussof
 systemd_dir: /etc/systemd/system

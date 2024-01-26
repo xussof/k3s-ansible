@@ -4,3 +4,4 @@ software_packages:
 disk_mount: sda
 #disk_mount_ssd_chino: sda
 disk_mount_seagate: sdb
+disk_mount_ssd2t: sdc
