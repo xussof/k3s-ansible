@@ -12,3 +12,6 @@
 
 - name: Include seagate
   include_tasks: seagate.yml
+
+- name: Include ssd2t
+  include_tasks: ssd2t.yml
