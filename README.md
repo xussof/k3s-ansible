@@ -62,7 +62,7 @@ ansible-playbook external-hdd.yml -i inventory/my-cluster/hosts.ini
 To get access to your **Kubernetes** cluster just
 
 ```bash
-scp debian@master_ip:~/.kube/config ~/.kube/config
+scp pi@192.168.0.180:~/.kube/config ~/.kube/config
 ```
 
 To set up garbage collection for k3s:
