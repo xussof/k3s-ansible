@@ -10,9 +10,9 @@
 #- name: Include ssdchino
 #  include_tasks: ssdchino.yml
 
-- name: Include seagate
-  include_tasks: seagate.yml
+# - name: Include seagate
+#   include_tasks: seagate.yml
 
-- name: Include ssd2t
-  include_tasks: ssd2t.yml
+# - name: Include ssd2t
+#   include_tasks: ssd2t.yml
 #sudo mount -t ntfs -o nls=utf8,umask=0222 /dev/sdb1 /mnt/seagate
