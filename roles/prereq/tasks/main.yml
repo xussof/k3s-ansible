@@ -1,4 +1,9 @@
 ---
+- name: "update hostnames"
+  hostname:
+    name: "{{ new_hostname }}"
+  notify: reboot
+  
 - name: Set SELinux to disabled state
   selinux:
     state: disabled
